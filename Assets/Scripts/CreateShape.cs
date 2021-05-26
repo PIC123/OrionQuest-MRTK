@@ -1,4 +1,5 @@
 ﻿using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.UI;
 using System;
 using System.Collections;
@@ -96,6 +97,7 @@ public class CreateShape : MonoBehaviour
                 currentObj.GetComponent<MeshRenderer>().material = randomMaterials[UnityEngine.Random.Range(0, randomMaterials.Length)];
                 currentObj.GetComponent<Rigidbody>().useGravity = gravityOn;
                 currentObj.GetComponent<Rigidbody>().detectCollisions = true;
+                currentObj.AddComponent<NearInteractionGrabbable>();
                 createMode = false;
             }
         }
